@@ -35,17 +35,17 @@
 {{- partial "plugin/style.html" $style -}}
 
 {{- /* style.min.css */ -}}
-{{- $style := dict "Source" "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/css/style.scss" "Fingerprint" $fingerprint -}}
+{{- $style := dict "Source" "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/css/style.min.css" "Fingerprint" $fingerprint -}}
 {{- $options := dict "targetPath" "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/css/style.min.css" "enableSourceMap" true -}}
 {{- $style = dict "Context" . "ToCSS" $options | merge $style -}}
 {{- partial "plugin/style.html" $style -}}
 
 {{- /* Font Awesome */ -}}
-{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//fontawesome-free/all.min.css" -}}
+{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/fontawesome-free/all.min.css" -}}
 {{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
 {{- partial "plugin/style.html" $style -}}
 
 {{- /* Animate.css */ -}}
-{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//animate/animate.min.css" -}}
+{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/animate/animate.min.css" -}}
 {{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
 {{- partial "plugin/style.html" $style -}}
