@@ -81,7 +81,7 @@ other = "No se encontraron resultados"
 other = "es"
 
 [lunrLanguageLib]
-other = "lib/lunr/lunr.es.js"
+other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/lunr/lunr.es.js"
 
 [copyToClipboard]
 other = "Copiar al portapapeles"

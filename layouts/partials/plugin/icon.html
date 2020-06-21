@@ -3,7 +3,7 @@
 {{- else -}}
     {{- $src := .Src -}}
     {{- with .Simpleicons -}}
-        {{- $prefix := $.Prefix | default "lib/simple-icons/icons" | strings.TrimSuffix "/" -}}
+        {{- $prefix := $.Prefix | default "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/simple-icons/icons" | strings.TrimSuffix "/" -}}
         {{- $src = printf "%v/%v.svg" $prefix . -}}
     {{- end -}}
     {{- if (urls.Parse $src).Host | not -}}
