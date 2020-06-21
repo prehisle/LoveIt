@@ -17,6 +17,6 @@
 
 {{- /* object-fit-images */ -}}
 {{- if $compatibility.objectFit -}}
-    {{- $source := $cdn.objectFitImagesJS | default "lib/object-fit-images/ofi.min.js" -}}
+    {{- $source := $cdn.jsdelivrBaseUrl | default "lib/object-fit-images/ofi.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
