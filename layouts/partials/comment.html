@@ -20,9 +20,9 @@
         {{- $gitalk := $comment.gitalk | default dict -}}
         {{- if $gitalk.enable -}}
             <div id="gitalk" class="comment"></div>
-            {{- $source := $cdn.gitalkCSS | default "lib/gitalk/gitalk.css" -}}
+            {{- $source := $cdn.gitalkCSS | default "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/gitalk/gitalk.css" -}}
             {{- dict "Source" $source "Minify" true "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-            {{- $source := $cdn.gitalkJS | default "lib/gitalk/gitalk.min.js" -}}
+            {{- $source := $cdn.gitalkJS | default "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/gitalk/gitalk.min.js" -}}
             {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
             {{- $commentConfig = dict "id" .Date "title" .Title "clientID" $gitalk.clientId "clientSecret" $gitalk.clientSecret "repo" $gitalk.repo "owner" $gitalk.owner "admin" (slice $gitalk.owner) | dict "gitalk" | merge $commentConfig -}}
             <noscript>
@@ -34,9 +34,9 @@
         {{- $valine := $comment.valine | default dict -}}
         {{- if $valine.enable -}}
             <div id="valine" class="comment"></div>
-            {{- $options := dict "targetPath" "lib/valine/valine.min.css" -}}
-            {{- dict "Source" "lib/valine/valine.scss" "ToCSS" $options | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-            {{- $source := $cdn.valineJS | default "lib/valine/Valine.min.js" -}}
+            {{- $options := dict "targetPath" "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/valine/valine.min.css" -}}
+            {{- dict "Source" "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/valine/valine.scss" "ToCSS" $options | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
+            {{- $source := $cdn.valineJS | default "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/valine/Valine.min.js" -}}
             {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
             {{- $commentConfig = dict "el" "#valine" "appId" $valine.appId "appKey" $valine.appKey "lang" ($valine.lang | default (T "valineLang")) "visitor" $valine.visitor "recordIP" $valine.recordIP "placeholder" ($valine.placeholder | default (T "valinePlaceholder")) "highlight" (ne $valine.highlight false) "enableQQ" $valine.enableQQ | dict "valine" | merge $commentConfig -}}
             {{- with $valine.avatar -}}
