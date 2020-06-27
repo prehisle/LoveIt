@@ -81,10 +81,10 @@ other = "没有找到结果"
 other = "zh"
 
 [lunrLanguageLib]
-other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/lunr/lunr.zh.js"
+other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lunr/lunr.zh.js"
 
 [lunrSegmentitLib]
-other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/lunr/lunr.segmentit.js"
+other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lunr/lunr.segmentit.js"
 
 [copyToClipboard]
 other = "复制到剪贴板"

@@ -4,7 +4,7 @@
 {{- $config := (.Scratch.Get "this").config -}}
 
 {{- /* Smooth Scroll */ -}}
-{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//smooth-scroll/smooth-scroll.min.js" -}}
+{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/smooth-scroll/smooth-scroll.min.js" -}}
 {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 
 {{- /* Search */ -}}
@@ -17,7 +17,7 @@
         {{- with .Site.Home.OutputFormats.Get "json" -}}
             {{- $config = dict "type" "lunr" "lunrIndexURL" .RelPermalink | dict "search" | merge $config -}}
         {{- end -}}
-        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//lunr/lunr.min.js" -}}
+        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lunr/lunr.min.js" -}}
         {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
         {{- if T "lunrLanguageLib" -}}
             {{- $config = T "lunrLanguageCode" | dict "lunrLanguageCode" | dict "search" | merge $config -}}
@@ -35,25 +35,25 @@
 {{- end -}}
 
 {{- /* lazysizes */ -}}
-{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//lazysizes/lazysizes.min.js" -}}
+{{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lazysizes/lazysizes.min.js" -}}
 {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 
 {{- /* twemoji */ -}}
 {{- if $params.twemoji -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//twemoji/twemoji.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/twemoji/twemoji.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $config = dict "twemoji" true | merge $config -}}
 {{- end -}}
 
 {{- /* lightgallery.js */ -}}
 {{- if $params.lightgallery -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//lightgallery/lightgallery.min.css" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lightgallery/lightgallery.min.css" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//lightgallery/lightgallery.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lightgallery/lightgallery.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//lightgallery/lg-thumbnail.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lightgallery/lg-thumbnail.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//lightgallery/lg-zoom.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lightgallery/lg-zoom.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $config = dict "selector" ".lightgallery" "speed" 400 "hideBarsDelay" 2000 "thumbnail" true "exThumbImage" "data-thumbnail" "thumbWidth" 80 "thumbContHeight" 80 "actualSize" false | dict "lightGallery" | merge $config -}}
 {{- end -}}
@@ -63,21 +63,21 @@
 
 {{- /* clipboard.js */ -}}
 {{- if ne $code.copy false -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//clipboard/clipboard.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/clipboard/clipboard.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $config = T "copyToClipboard" | dict "copyTitle" | dict "code" | merge $config -}}
 {{- end -}}
 
 {{- /* Sharer.js */ -}}
 {{- if $params.share.enable -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//sharer/sharer.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/sharer/sharer.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
 
 {{- /* TypeIt */ -}}
 {{- with (.Scratch.Get "this").typeitMap -}}
     {{- $typeit := $.Site.Params.typeit -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//typeit/typeit.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/typeit/typeit.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" $.Scratch "Data" | partial "scratch/script.html" -}}
     {{- $config = dict "speed" $typeit.speed "cursorSpeed" $typeit.cursorSpeed "cursorChar" $typeit.cursorChar "duration" $typeit.duration "data" . | dict "typeit" | merge $config -}}
 {{- end -}}
@@ -90,20 +90,20 @@
     {{- $math = dict "enable" false -}}
 {{- end -}}
 {{- if $math.enable -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//katex/katex.min.css" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/katex/katex.min.css" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//katex/katex.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/katex/katex.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//katex/auto-render.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/katex/auto-render.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- if $math.copyTex -}}
-        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//katex/copy-tex.min.css" -}}
+        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/katex/copy-tex.min.css" -}}
         {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//katex/copy-tex.min.js" -}}
+        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/katex/copy-tex.min.js" -}}
         {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- end -}}
     {{- if $math.mhchem -}}
-        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//katex/mhchem.min.js" -}}
+        {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/katex/mhchem.min.js" -}}
         {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- end -}}
     {{- $delimiters := slice (dict "left" "$$" "right" "$$" "display" true) (dict "left" "\\[" "right" "\\]" "display" true) -}}
@@ -119,7 +119,7 @@
 
 {{- /* mermaid */ -}}
 {{- if (.Scratch.Get "this").mermaid -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//mermaid/mermaid.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/mermaid/mermaid.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $options := dict "targetPath" "lib/mermaid/mermaid.min.css" "enableSourceMap" true -}}
     {{- dict "Source" "lib/mermaid/mermaid.scss" "ToCSS" $options "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
@@ -127,17 +127,17 @@
 
 {{- /* ECharts */ -}}
 {{- if (.Scratch.Get "this").echarts -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//echarts/echarts.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/echarts/echarts.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//echarts/macarons.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/echarts/macarons.js" -}}
     {{- dict "Source" $source "Minify" true "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
 
 {{- /* Mapbox GL */ -}}
 {{- if (.Scratch.Get "this").mapbox -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//mapbox-gl/mapbox-gl.min.css" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/mapbox-gl/mapbox-gl.min.css" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//mapbox-gl/mapbox-gl.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/mapbox-gl/mapbox-gl.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- dict "Source" "lib/mapbox-gl/mapbox-gl-language.js" "Minify" true "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $config = dict "accessToken" $params.mapbox.accessToken "RTLTextPlugin" "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.0/mapbox-gl-rtl-text.js" | dict "mapbox" | merge $config -}}
@@ -146,23 +146,23 @@
 {{- /* Music */ -}}
 {{- if (.Scratch.Get "this").music -}}
     {{- /* APlayer */ -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//aplayer/APlayer.min.css" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/aplayer/APlayer.min.css" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
     {{- $options := dict "targetPath" "lib/aplayer/dark.min.css" "enableSourceMap" true -}}
     {{- dict "Source" "lib/aplayer/dark.scss" "ToCSS" $options "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//aplayer/APlayer.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/aplayer/APlayer.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 
     {{- /* MetingJS */ -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//meting/Meting.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/meting/Meting.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
 
 {{- /* Cookie Consent */ -}}
 {{- if .Site.Params.cookieconsent | and .Site.Params.cookieconsent.enable -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//cookieconsent/cookieconsent.min.css" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/cookieconsent/cookieconsent.min.css" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//cookieconsent/cookieconsent.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/cookieconsent/cookieconsent.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $cookieconsentConfig := dict "popup" (dict "background" "#1aa3ff") "button" (dict "background" "#f0f0f0") | dict "theme" "edgeless" "palette" -}}
     {{- $cookieconsentConfig = .Site.Params.cookieconsent | merge $cookieconsentConfig -}}
@@ -189,7 +189,7 @@
 {{- $config | jsonify | printf "window.config=%s;" | dict "Content" | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 
 {{- /* Theme script */ -}}
-{{- dict "Source" "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/js/theme.min.js" "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+{{- dict "Source" "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/js/theme.min.js" "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- $_ := (resources.Get "js/theme.min.js.map").RelPermalink -}}
 
 {{- with (.Scratch.Get "this").scriptArr -}}

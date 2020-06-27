@@ -81,7 +81,7 @@ other = "Результатов не найдено"
 other = "ru"
 
 [lunrLanguageLib]
-other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/lunr/lunr.ru.js"
+other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lunr/lunr.ru.js"
 
 [copyToClipboard]
 other = "Копировать в буфер обмена"

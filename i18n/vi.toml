@@ -80,7 +80,7 @@ other = "Không tìm thấy"
 other = "vi"
 
 [lunrLanguageLib]
-other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/lunr/lunr.vi.js"
+other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lunr/lunr.vi.js"
 
 [copyToClipboard]
 other = "Sao chép vào bộ nhớ tạm"

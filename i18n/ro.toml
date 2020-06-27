@@ -81,7 +81,7 @@ other = "Nici un rezultat gasit"
 other = "ro"
 
 [lunrLanguageLib]
-other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib/lunr/lunr.ro.js"
+other = "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/lunr/lunr.ro.js"
 
 [copyToClipboard]
 other = "Copiați în clipboard"

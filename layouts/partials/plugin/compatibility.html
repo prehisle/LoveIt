@@ -17,6 +17,6 @@
 
 {{- /* object-fit-images */ -}}
 {{- if $compatibility.objectFit -}}
-    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.1/lib//object-fit-images/ofi.min.js" -}}
+    {{- $source := "https://cdn.jsdelivr.net/gh/prehisle/cdn@0.2/lib/object-fit-images/ofi.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
